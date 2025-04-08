@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "shiny": "npx sass --watch style.scss:style.css"
+  },
+  "devDependencies": {
+    "sass": "^1.86.0"
+  }
+}

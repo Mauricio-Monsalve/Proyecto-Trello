@@ -1,0 +1,116 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right bottom, dodgerblue 20%, cornflowerblue 80%);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: calc(var(--header-height) * -1);
+  transition: top 0.3s ease;
+  z-index: 1;
+
+  &>* {
+    padding: 10px;
+  }
+
+  .header-left {
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: var(--header-height);
+
+    img {
+      border-radius: 15%;
+      height: 100%;
+    }
+
+    h1 {
+      font-size: calc(var(--header-height) / 1.5);
+    }
+  }
+
+  .header-right {
+    display: flex;
+    height: var(--header-height);
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+
+      &>div>ul {
+        transform: translateY(0) scaleY(1);
+      }
+    }
+
+    &.hide-list {
+      &>div>ul {
+        transform: translateY(-50%) scaleY(0);
+      }
+    }
+
+    &>label {
+      display: none;
+
+      &>input {
+        display: none;
+
+        &>img {
+          display: flex;
+          height: 100%;
+        }
+      }
+    }
+
+    &>div {
+      display: flex;
+      height: 100%;
+      gap: 2vh;
+
+      &>span {
+        color: white;
+        font-size: calc(var(--header-height) / 3);
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        overflow-wrap: anywhere;
+      }
+
+      &>.user-image {
+        height: 100%;
+        aspect-ratio: 1;
+        background-color: white;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      &>ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 10px;
+        top: 100%;
+        background-color: white;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        border-radius: 10px;
+        border-top-right-radius: 0;
+        cursor: pointer;
+        transform: translateY(-50%) scaleY(0);
+        transition: transform 0.3s ease;
+
+        &>li {
+          display: flex;
+          align-items: center;
+          min-width: 150px;
+          font-size: large;
+          padding: 2vh 4vh;
+
+          &:hover {
+            background-color: cornsilk;
+          }
+        }
+      }
+    }
+  }
+}

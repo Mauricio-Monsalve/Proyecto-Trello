@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trello</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="header-left">
+            <img src="./images/logo.jpg" alt="Logo de Trello">
+            <h1>Trello</h1>
+        </a>
+        <div class="header-right">
+            <label>
+                <img src="./images/menu.svg" alt="Menu">
+                <input type="checkbox">
+            </label>
+            <div>
+                <span>Nombredelapersona</span>
+                <img class="user-image" src="./images/userDefault.svg" alt="Foto de perfil">
+                <ul>
+                    <li id="headerLiConfig">Configuración</li>
+                    <li id="headerLiExit">Salir</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="cont-regis" class="cont-regis show-card">
+            <section id="sect-login">
+                <h2>Iniciar sesion</h2>
+                <form id="form-login">
+                    <label>
+                        <span>Correo</span>
+                        <input type="email" name="correo" id="inputEmail" required>
+                    </label>
+                    <label>
+                        <span>Contraseña</span>
+                        <input type="password" name="contraseña" id="inputPass" required>
+                    </label>
+                    <button type="submit">Iniciar sesión</button>
+                </form>
+                <p class="error-p"></p>
+                <a href="#" class="link-change">No tengo cuenta</a>
+            </section>
+            <section id="sect-regis">
+                <h2>Registrarse</h2>
+                <form id="form-regis">
+                    <label>
+                        <span>Nombre</span>
+                        <input type="text" name="nombre" id="inputName" required minlength="3" maxlength="20">
+                    </label>
+                    <label>
+                        <span>Apellido</span>
+                        <input type="text" name="apellido" id="inputLastName" required minlength="3" maxlength="20">
+                    </label>
+                    
+                    <label for="inputAge">
+                        <span>Edad</span>
+                        <input type="number" name="edad" id="inputAge" required min="10">
+                    </label>
+                    <label>
+                        <span>Correo</span>
+                        <input type="email" name="correo" id="inputRegEmail" required>
+                    </label>
+                    <label>
+                        <span>Contraseña</span>
+                        <input type="password" name="contraseña" id="inputRegPass" required>
+                    </label>
+                    <label>
+                        <span>Confirmar contraseña</span>
+                        <input type="password" name="contraseña" id="inputRegPassConfirm" required>
+                    </label>
+                    <button type="submit">Registrarse</button>
+                </form>
+                <p class="error-p"></p>
+                <a href="#" class="link-change">Ya tengo cuenta</a>
+            </section>
+            <section id="sect-photo">
+                <h2>Nombre de la persona</h2>
+                <form id="form-photo" class="diferente">
+                    <!-- <div class="user-image"></div> -->
+                    <img class="user-image" src="./images/userDefault.svg" alt="Foto de perfil">
+                    <button type="button" id="btnDataChange">Modificar datos</button>
+                    <div>
+                        <button type="button" id="btnPhotoCancel">Cancelar</button>
+                        <button type="button" id="btnPhotoSave">Guardar</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <div id="cont-notes" class="cont-notes">
+            <form id="form-notes">
+                <h2>Hacer una anotacion</h2>
+                <label for="note-title-input">
+                    <span>Titulo de la nota</span>
+                    <input type="text" id="note-title-input" required>
+                </label>
+                <label for="note-desc-input">
+                    <span>Descripción de la nota</span>
+                    <textarea id="note-desc-input" required></textarea>
+                </label>
+                <button type="submit">Agregar nota</button>
+            </form>
+            <div class="cont-categorias">
+                <hr>
+                <select style="color: black;" id="agruparNotas">
+                    <option style="color: black;" value="0">Todos</option>
+                    <option style="color: orange;" value="1">Pendientes</option>
+                    <option style="color: green;" value="2">Completos</option>
+                    <option style="color: red;" value="3">Incompletos</option>
+                </select>
+                <hr>
+            </div>
+            <div id="notes" class="notes">
+                <!-- <div class="memo">
+                    <div>
+                        <div class="separator">
+                            <strong>Titulo aaaaaaaaaaa ddddddddddd eeeeeeeeee</strong>
+                            <div class="menu">
+                                <img src="./images/3menu.svg" alt="Modificar borrar">
+                                <ul>
+                                    <li>Modificar</li>
+                                    <li>Borrar</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt et aut explicabo repellendus velit atque aperiam adipisci, vitae rerum corporis ex distinctio perferendis laborum saepe. Assumenda ab reprehenderit error illo.</p>
+                        <select style="color: orange;" onchange="this.style.color = this.querySelector('option:nth-child('+this.value+')').style.color;">
+                            <option style="color: orange;" value="1">Pendiente</option>
+                            <option style="color: green;" value="2">Completo</option>
+                            <option style="color: red;" value="3">Incompleto</option>
+                        </select>
+                    </div>
+                </div> -->
+                <!-- <div class="memo">
+                    <div>
+                        <strong>Titulo</strong>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt et aut explicabo repellendus velit atque aperiam adipisci, vitae rerum corporis ex distinctio perferendis laborum saepe. Assumenda ab reprehenderit error illo.</p>
+                        <select style="color: orange;" onchange="this.style.color = this.querySelector('option:nth-child('+this.value+')').style.color;">
+                            <option style="color: orange;" value="1">Pendiente</option>
+                            <option style="color: green;" value="2">Completo</option>
+                            <option style="color: red;" value="3">Incompleto</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="memo">
+                    <div>
+                        <strong>Titulo</strong>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt et aut explicabo repellendus velit atque aperiam adipisci, vitae rerum corporis ex distinctio perferendis laborum saepe. Assumenda ab reprehenderit error illo.</p>
+                        <select style="color: orange;" onchange="this.style.color = this.querySelector('option:nth-child('+this.value+')').style.color;">
+                            <option style="color: orange;" value="1">Pendiente</option>
+                            <option style="color: green;" value="2">Completo</option>
+                            <option style="color: red;" value="3">Incompleto</option>
+                        </select>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="modal-datos">
+            <div class="cont-modal">
+                <h2>Modificar datos</h2>
+                <form class="diferente">
+                    <label>
+                        <span>Nombre</span>
+                        <input type="text" name="nombre" id="inputModName" required minlength="3" maxlength="20">
+                    </label>
+                    <label>
+                        <span>Apellido</span>
+                        <input type="text" name="apellido" id="inputModLastName" required minlength="3" maxlength="20">
+                    </label>
+                    
+                    <label for="inputAge">
+                        <span>Edad</span>
+                        <input type="number" name="edad" id="inputModAge" required min="10">
+                    </label>
+                    <label>
+                        <span>Correo</span>
+                        <input type="email" name="correo" id="inputModEmail" required>
+                    </label>
+                    <label>
+                        <span>Contraseña anterior</span>
+                        <input type="password" name="contraseña" id="inputModLastPass" required>
+                    </label>
+                    <label>
+                        <span>Nueva contraseña</span>
+                        <input type="password" name="contraseña" id="inputModNewPass" required>
+                    </label>
+                    <label>
+                        <span>Confirmar contraseña</span>
+                        <input type="password" name="contraseña" id="inputModNewPassConfirm" required>
+                    </label>
+                    <div>
+                        <button type="button">Cancelar</button>
+                        <button type="submit">Modificar</button>
+                    </div>
+                </form>
+                <p class="error-p">EEEEEE</p>
+            </div>
+        </div>
+        <!-- <div class="modal-notas"></div> -->
+    </main>
+    <script type="module" src="./index.js" defer></script>
+</body>
+</html>

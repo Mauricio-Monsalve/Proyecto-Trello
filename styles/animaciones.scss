@@ -1,0 +1,114 @@
+.show-category {
+    animation: show-category 0.3s ease backwards;
+}
+
+@keyframes show-category {
+    from {
+        grid-template-columns: 0fr 1fr 0fr;
+        transform: scaleY(0);
+    }
+    to {
+        grid-template-columns: 2fr 1fr 2fr;
+        transform: scaleY(1);
+    }
+}
+
+.hide-category {
+    animation: hide-category 0.3s ease forwards;
+}
+
+@keyframes hide-category {
+    from {
+        grid-template-columns: 2fr 1fr 2fr;
+        transform: scaleY(1);
+    }
+    to {
+        grid-template-columns: 0fr 1fr 0fr;
+        transform: scaleY(0);
+    }
+}
+
+.show-card {
+    animation: show-card 1s ease normal backwards;
+}
+
+@keyframes show-card {
+    from {
+        transform: rotateX(90deg) rotateY(90deg);
+    }
+    to {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+}
+
+.hide-card {
+    animation: hide-card 500ms ease normal forwards;
+}
+
+@keyframes hide-card {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateX(90deg) rotateY(-90deg);
+    }
+}
+
+.show-note > div {
+    animation: show-note 0.3s ease 0.3s normal backwards;
+}
+
+@keyframes show-note {
+    0% {
+        transform: scale(0);
+        display: flex;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.hide-note > div {
+    animation: hide-note 0.3s ease normal forwards;
+}
+
+
+@keyframes hide-note {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+        display: none;
+    }
+}
+
+.show-note {
+    animation: show-cont-note 0.3s ease normal backwards;
+}
+
+@keyframes show-cont-note {
+    from {
+        width: 0vh;
+        padding: 0;
+    }
+    to {
+        width: 35vh;
+        padding: 1vh;
+    }
+}
+
+.hide-note {
+    animation: hide-cont-note 0.3s ease 0.3s normal forwards;
+}
+
+@keyframes hide-cont-note {
+    from {
+        width: 35vh;
+        padding: 1vh;
+    }
+    to {
+        width: 0vh;
+        padding: 0;
+    }
+}

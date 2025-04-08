@@ -1,0 +1,93 @@
+%formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+
+    label {
+        display: flex;
+        flex-direction: column;
+        font-size: 2vh;
+
+        input,
+        textarea {
+            margin: 5px 0;
+            padding: 1vh;
+            border: none;
+            border-radius: 10px;
+            background-color: floralwhite;
+            outline: none;
+            font-size: 2vh;
+
+            &:hover {
+                background-color: hsl(40, 50%, 97%);
+            }
+
+            &:focus {
+                outline: 1px solid burlywood;
+            }
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 10vh;
+            max-height: 50vh;
+        }
+    }
+
+    button {
+        margin: 10px 0;
+        padding: 1vh;
+        border: none;
+        border-radius: 10px;
+        background-color: cornflowerblue;
+        color: white;
+        font-size: 3vh;
+
+        &:hover {
+            background-color: dodgerblue;
+        }
+    }
+
+    &>.user-image {
+        width: 50%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: white;
+        margin: auto;
+        object-fit: cover;
+    }
+
+    &.diferente {
+        // label {
+        //     display: flex;
+        //     flex-direction: row;
+        //     align-items: center;
+        // }
+
+        div {
+            display: flex;
+            justify-content: space-between;
+            gap: 5%;
+
+            button {
+                background-color: gray;
+                width: 100%;
+
+                &:first-child:hover {
+                    background-color: red;
+                }
+
+                &:last-child:hover {
+                    background-color: green;
+                }
+            }
+        }
+    }
+
+    ~.error-p {
+        color: red;
+        text-align: center;
+        font-size: 3vh;
+    }
+}
