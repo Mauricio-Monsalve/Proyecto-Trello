@@ -2,7 +2,10 @@ import elementos from "./elementos.js";
 import controlador_vistas from "./controlador.js";
 import Usuario from "../classes/Usuario.js";
 
-export const usuario = { actual: {} };
+export const usuario = {
+    actual: {},
+    temporal: {}
+};
 
 export function registrarUsuario(event) {
     event.preventDefault();
@@ -16,7 +19,7 @@ export function registrarUsuario(event) {
         baseUsuarios = baseUsuarios.concat(JSON.parse(baseUsuariosExiste));
 
         //buscamos en dicho arreglo si existe un usuario ya registrado con el correo que pusimos en el campo de registro
-        const usuarioExistente = baseUsuarios.find(usuario => usuario.correo == elementos.correoRegis.value);
+        const usuarioExistente = baseUsuarios.find(usuario => usuario.correo.toLowerCase() == elementos.correoRegis.value.toLowerCase());
 
         //si el usuario existe, arrojar un error
         if(usuarioExistente) {
@@ -38,7 +41,7 @@ export function registrarUsuario(event) {
         elementos.nombreRegis.value.replaceAll("<","&#60;").replaceAll(">","&#62;"),
         elementos.apellidoRegis.value.replaceAll("<","&#60;").replaceAll(">","&#62;"),
         elementos.edadRegis.value.replaceAll("<","&#60;").replaceAll(">","&#62;"),
-        elementos.correoRegis.value.replaceAll("<","&#60;").replaceAll(">","&#62;"),
+        elementos.correoRegis.value.toLowerCase().replaceAll("<","&#60;").replaceAll(">","&#62;"),
         elementos.claveRegis.value.replaceAll("<","&#60;").replaceAll(">","&#62;"),
         "./images/userDefault.svg"
     );
@@ -58,7 +61,7 @@ export function registrarUsuario(event) {
         elementos.formRegis.reset();
     }, 500);
     //ayudamos al usuario colocandole el correo en el formLogin
-    elementos.correoLogin.value = usuarioGuardar.correo;
+    elementos.correoLogin.value = elementos.correoRegis.value;
     //nos vamo pa form login
     controlador_vistas.actualizar_vista(0);
 }
@@ -80,7 +83,7 @@ export function ingresarUsuario(event) {
 
     let campoCorreo = elementos.correoLogin.value.replaceAll("<","&#60;").replaceAll(">","&#62;");
 
-    const usuarioExistente = baseUsuarios.find(usuarioBuscar => usuarioBuscar.correo == campoCorreo);
+    const usuarioExistente = baseUsuarios.find(usuarioBuscar => usuarioBuscar.correo.toLowerCase() == campoCorreo.toLowerCase());
 
     //si el usuario no existe, arrojar un error
     if(!usuarioExistente) {

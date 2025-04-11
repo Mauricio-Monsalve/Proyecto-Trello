@@ -301,7 +301,7 @@ main {
   height: 100%;
 }
 main .cont-regis {
-  background-color: red;
+  background-color: white;
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
@@ -381,6 +381,7 @@ main .modal-datos, main .modal-notas {
   display: flex;
   justify-content: center;
   align-items: center;
+  visibility: visible;
 }
 main .modal-datos .cont-modal, main .modal-notas .cont-modal {
   display: flex;
@@ -390,7 +391,19 @@ main .modal-datos .cont-modal, main .modal-notas .cont-modal {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   padding: 4vh;
+  align-items: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  transform: scaleY(1);
 }
+main .modal-datos.modal-hidden, main .modal-notas.modal-hidden {
+  background-color: transparent;
+  visibility: hidden;
+  transition: visibility 0s 0.3s;
+}
+main .modal-datos.modal-hidden .cont-modal, main .modal-notas.modal-hidden .cont-modal {
+  transform: scaleY(0);
+}
+
 .show-category {
   animation: show-category 0.3s ease backwards;
 }

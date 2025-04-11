@@ -37,8 +37,8 @@ const elementos = {
     nombrePerfil : document.querySelector("#sect-photo h2"),
     imgPhoto : document.querySelector("#sect-photo .user-image"),
     btnDataChange : document.getElementById("btnDataChange"),
-    btnPhotoCancel : document.getElementById("btnPhotoCancel"),
-    btnPhotoSave : document.getElementById("btnPhotoSave"),
+    btnDataCancel : document.getElementById("btnDataCancel"),
+    btnDataSave : document.getElementById("btnDataSave"),
     
     //elementos notas
     formNotes : document.getElementById("form-notes"),
@@ -47,6 +47,19 @@ const elementos = {
     contCategorias : document.querySelector(".cont-categorias"),
     categoriaNotas : document.getElementById("agruparNotas"),
     groupNotes : document.getElementById("notes"),
+
+    //modal modificar datos
+    modalDatos : document.querySelector(".modal-datos"),
+    formModalDatos: document.querySelector(".modal-datos form"),
+    nombreModificar: document.getElementById("inputModName"),
+    apellidoModificar: document.getElementById("inputModLastName"),
+    edadModificar: document.getElementById("inputModAge"),
+    correoModificar: document.getElementById("inputModEmail"),
+    claveModificar: document.getElementById("inputModLastPass"),
+    claveNuevaModificar: document.getElementById("inputModNewPass"),
+    claveNuevaConfirmarModificar: document.getElementById("inputModNewPassConfirm"),
+    cancelarModificar: document.querySelector(".modal-datos form button[type='button']"),
+    pErrorModificar: document.querySelector(".modal-datos .error-p"),
 };
 
 export default elementos;
