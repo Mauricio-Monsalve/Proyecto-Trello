@@ -108,6 +108,7 @@ main {
         justify-content: center;
         align-items: center;
         visibility: visible;
+        transition: background-color 0.3s ease;
 
         .cont-modal {
             display: flex;
@@ -118,7 +119,7 @@ main {
             border-radius: 20px;
             padding: 4vh;
             align-items: center;
-            transition: transform 0.3s ease, background-color 0.3s ease;
+            transition: transform 0.3s ease;
             transform: scaleY(1);
             
             form {
@@ -129,7 +130,7 @@ main {
         &.modal-hidden {
             background-color: transparent;
             visibility: hidden;
-            transition: visibility 0s 0.3s;
+            transition: background-color 0.3s ease, visibility 0s 0.3s;
             
             .cont-modal {
                 transform: scaleY(0);

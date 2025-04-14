@@ -382,6 +382,7 @@ main .modal-datos, main .modal-notas {
   justify-content: center;
   align-items: center;
   visibility: visible;
+  transition: background-color 0.3s ease;
 }
 main .modal-datos .cont-modal, main .modal-notas .cont-modal {
   display: flex;
@@ -392,13 +393,13 @@ main .modal-datos .cont-modal, main .modal-notas .cont-modal {
   border-radius: 20px;
   padding: 4vh;
   align-items: center;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.3s ease;
   transform: scaleY(1);
 }
 main .modal-datos.modal-hidden, main .modal-notas.modal-hidden {
   background-color: transparent;
   visibility: hidden;
-  transition: visibility 0s 0.3s;
+  transition: background-color 0.3s ease, visibility 0s 0.3s;
 }
 main .modal-datos.modal-hidden .cont-modal, main .modal-notas.modal-hidden .cont-modal {
   transform: scaleY(0);
