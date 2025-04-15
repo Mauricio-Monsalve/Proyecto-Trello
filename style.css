@@ -348,6 +348,11 @@ main .cont-notes form {
   border-radius: 20px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
+main .cont-notes form > h2 {
+  font-size: 3vh;
+  margin-bottom: 1vh;
+  text-align: center;
+}
 main .cont-notes select {
   font-size: 3vh;
   align-self: flex-end;
@@ -552,7 +557,8 @@ main .modal-datos.modal-hidden .cont-modal, main .modal-notas.modal-hidden .cont
     height: unset;
   }
   header .header-right > div .user-image {
-    height: 50%;
+    width: 50%;
+    height: unset;
     margin: 5vh;
   }
   header .header-right > div ul {

@@ -4,6 +4,9 @@ import { usuario } from "./sistema_usuarios.js";
 import { limpiarNotas } from "./sistema_notas.js";
 
 export function configuracion() {
+    for (const clave in usuario.actual) {
+        usuario.temporal[clave] = usuario.actual[clave];
+    }
     elementos.imgPhoto.src = usuario.actual.foto;
     elementos.nombrePerfil.textContent = usuario.actual.nombre.replaceAll("&#60;","<").replaceAll("&#62;",">") + " " + usuario.actual.apellido.replaceAll("&#60;","<").replaceAll("&#62;",">");
     limpiarNotas();
@@ -47,6 +50,7 @@ export function login() {
     controlador_vistas.actualizar_vista(0);
     setTimeout(() => {
         elementos.formRegis.reset();
+        elementos.pErrorRegis.textContent = "";
     }, 500);
 }
 
@@ -54,5 +58,6 @@ export function regis() {
     controlador_vistas.actualizar_vista(1);
     setTimeout(() => {
         elementos.formLogin.reset();
+        elementos.pErrorLogin.textContent = "";
     }, 500);
 }

@@ -75,7 +75,7 @@ export function ingresarUsuario(event) {
 
     //si no existe la base de datos, arrojar un error diciendo que no esta registrado o encontrado
     if(!baseUsuariosExiste) {
-        elementos.pErrorLogin.textContent = "Usuario no encontrado";
+        elementos.pErrorLogin.textContent = "Error al acceder a la base de datos";
         return;
     }
     //si existe, fusionarlo con el arreglo vacio
@@ -113,4 +113,7 @@ export function ingresarUsuario(event) {
     }, 500);
 
     controlador_vistas.actualizar_vista(2);
+    for (const clave in usuario.actual) {
+        usuario.temporal[clave] = usuario.actual[clave];
+    }
 }
