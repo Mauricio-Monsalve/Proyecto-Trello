@@ -529,7 +529,7 @@ main .modal-datos.modal-hidden .cont-modal, main .modal-notas.modal-hidden .cont
     left: 0;
     top: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     opacity: 0;
   }
   header .header-right:has(label > input:checked) > div {

@@ -19,7 +19,7 @@ export function registrarUsuario(event) {
         baseUsuarios = baseUsuarios.concat(JSON.parse(baseUsuariosExiste));
 
         //buscamos en dicho arreglo si existe un usuario ya registrado con el correo que pusimos en el campo de registro
-        const usuarioExistente = baseUsuarios.find(usuario => usuario.correo.toLowerCase() == elementos.correoRegis.value.toLowerCase());
+        const usuarioExistente = baseUsuarios.find(user => user.correo.toLowerCase() == elementos.correoRegis.value.toLowerCase());
 
         //si el usuario existe, arrojar un error
         if(usuarioExistente) {
@@ -83,7 +83,7 @@ export function ingresarUsuario(event) {
 
     let campoCorreo = elementos.correoLogin.value.replaceAll("<","&#60;").replaceAll(">","&#62;");
 
-    const usuarioExistente = baseUsuarios.find(usuarioBuscar => usuarioBuscar.correo.toLowerCase() == campoCorreo.toLowerCase());
+    const usuarioExistente = baseUsuarios.find(user => user.correo.toLowerCase() == campoCorreo.toLowerCase());
 
     //si el usuario no existe, arrojar un error
     if(!usuarioExistente) {
@@ -92,8 +92,6 @@ export function ingresarUsuario(event) {
     }
 
     let campoClave = elementos.claveLogin.value.replaceAll("<","&#60;").replaceAll(">","&#62;");
-
-    
 
     //verificar si la clave registrada es la misma que en el campo de texto
     if(usuarioExistente.clave != campoClave) {
@@ -113,6 +111,7 @@ export function ingresarUsuario(event) {
     }, 500);
 
     controlador_vistas.actualizar_vista(2);
+
     for (const clave in usuario.actual) {
         usuario.temporal[clave] = usuario.actual[clave];
     }

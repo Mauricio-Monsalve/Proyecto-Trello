@@ -1,7 +1,6 @@
 import elementos from "./elementos.js";
 import controlador_vistas from "./controlador.js";
 import { usuario } from "./sistema_usuarios.js";
-import Usuario from "../classes/Usuario.js";
 import { traerNotas } from "./sistema_notas.js";
 
 export function guardarDatos(){
@@ -29,6 +28,25 @@ export function guardarDatos(){
         alert("Error al guardar cambios en la base de datos");
         return;
     }
+
+    //antes de modificar
+    //usuario actual = anterior@gmail.com
+    //usuario temporal = anterior@gmail.com
+    
+    //despues de modificar
+    //usuario actual = anterior@gmail.com
+    //usuario temporal = nuevo@gmail.com
+    
+    //guardo el correo anterior para usarlo despues (el bucle no me afecta) <-correoTemporal
+
+    //despues de guardar
+    //usuario actual = nuevo@gmail.com
+    //usuario temporal = nuevo@gmail.com
+    //las notas en plan, y ahora que  ._., cambia las que tienen "anterior" <- correoTemporal
+    //notas de juan@gmail.com
+    //notas de carlos@gmail.com
+    //notas de pablo@gmail.com
+    //notas de anterior@gmail.com
 
     const correoTemporal = usuario.actual.correo;
 
@@ -65,8 +83,8 @@ export function guardarDatos(){
 export function cancelarDatos(){
     usuario.temporal = {};
     elementos.imgHeader.src = usuario.actual.foto;
-    controlador_vistas.actualizar_vista(3);
     elementos.nombrePerfilHeader.textContent = usuario.actual.nombre.replaceAll("&#60;","<").replaceAll("&#62;",">");
+    controlador_vistas.actualizar_vista(3);
     setTimeout(() => {
         traerNotas(usuario.actual.correo);
         elementos.contCategorias.className = `cont-categorias show-category`;
@@ -139,7 +157,7 @@ export function aceptarModificacion(event) {
     usuario.temporal.apellido = elementos.apellidoModificar.value.replaceAll("<","&#60;").replaceAll(">","&#62;");
     usuario.temporal.edad = elementos.edadModificar.value.replaceAll("<","&#60;").replaceAll(">","&#62;");
     usuario.temporal.correo = campoCorreo;
-    usuario.temporal.clave = campoClaveNueva;
+    usuario.temporal.clave = campoClaveNueva.replaceAll("<","&#60;").replaceAll(">","&#62;");
 
     elementos.nombrePerfil.textContent = usuario.temporal.nombre.replaceAll("&#60;","<").replaceAll("&#62;",">") + " " + usuario.temporal.apellido.replaceAll("&#60;","<").replaceAll("&#62;",">");;
 

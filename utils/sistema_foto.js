@@ -3,6 +3,7 @@ import { usuario } from "./sistema_usuarios.js";
 
 export function cambiarFoto() {
     let nuevaFoto = prompt("Ingresa el enlace a la nueva foto");
+    
     if(nuevaFoto == null){
         return;
     }
@@ -12,6 +13,7 @@ export function cambiarFoto() {
     
     fotoPrueba.onload = () => {
         elementos.imgPhoto.src = nuevaFoto;
+        usuario.temporal.foto = nuevaFoto;
     };
     
     fotoPrueba.onerror = () => {
@@ -19,7 +21,6 @@ export function cambiarFoto() {
     };
     
     fotoPrueba.src = nuevaFoto;
-    usuario.temporal.foto = nuevaFoto;
 
 
     // if(nuevaFoto.replaceAll(" ","") == "") {

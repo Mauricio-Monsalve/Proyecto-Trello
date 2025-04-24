@@ -16,7 +16,7 @@ export function configuracion() {
     setTimeout(() => {
         controlador_vistas.actualizar_vista(2);
         elementos.groupNotes.innerHTML = "";
-        // elementos.formNotes.reset();
+        elementos.formNotes.reset();
 
         setTimeout(() => {
             elementos.header.querySelector(".header-right").classList.remove("hide-list");

@@ -14,7 +14,7 @@ window.addEventListener("resize",() => {
     }, 1);
 });
 
-controlador_vistas.actualizar_vista(3);
+controlador_vistas.actualizar_vista(0);
 
 
 elementos.headerLiConfig.addEventListener("click",irA.configuracion);

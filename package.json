@@ -1,8 +1,13 @@
 {
   "scripts": {
-    "shiny": "npx sass --watch style.scss:style.css"
+    "dev":"vite",
+    "shiny":"npx sass --watch style.scss:style.css"
   },
   "devDependencies": {
     "sass": "^1.86.0"
+  },
+  "dependencies": {
+    "extract-uri-image": "^1.0.2",
+    "vite": "^6.3.2"
   }
 }
