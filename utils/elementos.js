@@ -60,6 +60,13 @@ const elementos = {
     claveNuevaConfirmarModificar: document.getElementById("inputModNewPassConfirm"),
     cancelarModificar: document.querySelector(".modal-datos form button[type='button']"),
     pErrorModificar: document.querySelector(".modal-datos .error-p"),
+
+    //modal modificar notas
+    modalNotas: document.querySelector(".modal-notas"),
+    formModalNotas: document.querySelector(".modal-notas form"),
+    tituloNotaModificar: document.getElementById("mod-note-title-input"),
+    descripcionNotaModificar: document.getElementById("mod-note-desc-input"),
+    cancelarNotaModificar: document.querySelector(".modal-notas form button[type='button']"),
 };
 
 export default elementos;

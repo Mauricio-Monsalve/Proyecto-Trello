@@ -3,7 +3,7 @@ import controlador_vistas from "./utils/controlador.js";
 import { registrarUsuario, ingresarUsuario } from "./utils/sistema_usuarios.js";
 import { cambiarFoto } from "./utils/sistema_foto.js";
 import * as irA from "./utils/sistema_vistas_simple.js";
-import { cambiarEstadoNota, cambiarNota, crearNota, filtrarNotas } from "./utils/sistema_notas.js";
+import { cambiarEstadoNota, cambiarNota, cancelarModificarNota, crearNota, filtrarNotas, modificarNota } from "./utils/sistema_notas.js";
 import { guardarDatos, cancelarDatos, cambiarDatos, aceptarModificacion, cancelarModificacion } from "./utils/sistema_modificar.js";
 
 window.addEventListener("resize",() => {
@@ -48,6 +48,10 @@ elementos.categoriaNotas.addEventListener("change",filtrarNotas);
 elementos.groupNotes.addEventListener("change",cambiarEstadoNota);
 
 elementos.groupNotes.addEventListener("click",cambiarNota);
+
+elementos.formModalNotas.addEventListener("submit",modificarNota);
+
+elementos.cancelarNotaModificar.addEventListener("click",cancelarModificarNota);
 
 // patchEliminarNotas();
 

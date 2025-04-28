@@ -269,7 +269,7 @@ export function cambiarNota(event) {
     }
 
     if(etiqueta.className == "btn-modificar-nota") {
-        modificarNota();
+        desplegarModificarNota(idNota,indiceNotaExiste,baseNotas);
     }
 
     if(etiqueta.className == "btn-borrar-nota") {
@@ -277,9 +277,115 @@ export function cambiarNota(event) {
     }
 }
 
-function modificarNota() {
-    console.log("estoy modificando")
+
+
+
+
+
+
+
+
+
+function desplegarModificarNota(idNota, posicionNota, baseNotas) {
+    elementos.tituloNotaModificar.value = baseNotas[posicionNota].titulo;
+    elementos.descripcionNotaModificar.value = baseNotas[posicionNota].descripcion;
+    elementos.modalNotas.classList.remove("modal-hidden");
+    elementos.modalNotas.classList.add(`nota${idNota}`);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export function modificarNota(event) {
+    event.preventDefault();
+
+
+    const baseNotasExiste = localStorage.getItem("Notas");
+    const baseNotas = baseNotasExiste ? JSON.parse(baseNotasExiste) : [];
+
+    if(!baseNotas.length) { //que pasa aqui???
+        alert("Error al acceder a la base de datos");
+        return;
+    }
+
+    let idNota = "";
+
+    for (const clase of elementos.modalNotas.classList) {
+        if( clase.startsWith("nota") ) {
+            idNota = clase;
+            elementos.modalNotas.classList.remove(clase);
+        }
+    }
+    
+    const indiceNotaExiste = baseNotas.findIndex(not => not.id == idNota.replace("nota",""));
+    
+    if(indiceNotaExiste == -1) {
+        alert("La nota que desea modificar ya no existe");
+        return;
+    }
+    
+    baseNotas[indiceNotaExiste].titulo = elementos.tituloNotaModificar.value.replaceAll("<","&#60;").replaceAll(">","&#62;");
+    baseNotas[indiceNotaExiste].descripcion = elementos.descripcionNotaModificar.value.replaceAll("<","&#60;").replaceAll(">","&#62;");
+    localStorage.setItem("Notas",JSON.stringify(baseNotas));
+    
+    const htmlNota = document.getElementById(idNota);
+
+    elementos.modalNotas.classList.add("modal-hidden");
+
+    setTimeout(() => {
+        elementos.formModalNotas.reset();
+
+        animarNotaEspecifica(htmlNota,false);
+        setTimeout(() => {
+            htmlNota.querySelector("strong").textContent = baseNotas[indiceNotaExiste].titulo;
+            htmlNota.querySelector("p").textContent = baseNotas[indiceNotaExiste].descripcion;
+            animarNotaEspecifica(htmlNota,true);
+        }, 600);
+    }, 300);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+export function cancelarModificarNota() {
+    elementos.modalNotas.classList.add("modal-hidden");
+
+    for (const clase of elementos.modalNotas.classList) {
+        if(clase.startsWith("nota")) {
+            elementos.modalNotas.classList.remove(clase);
+        }
+    }
+    
+
+    setTimeout(() => {
+        elementos.formModalNotas.reset();
+    }, 300);
+}
+
+
+
+
+
+
+
 
 function borrarNota(elementoNota, idNota, posicionNota, baseNotas) {
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <header>
         <a href="#" class="header-left">
@@ -57,7 +59,7 @@
                         <span>Apellido</span>
                         <input type="text" name="apellido" id="inputLastName" required minlength="3" maxlength="20">
                     </label>
-                    
+
                     <label for="inputAge">
                         <span>Edad</span>
                         <input type="number" name="edad" id="inputAge" required min="10">
@@ -173,7 +175,7 @@
                         <span>Apellido</span>
                         <input type="text" name="apellido" id="inputModLastName" required minlength="3" maxlength="20">
                     </label>
-                    
+
                     <label for="inputAge">
                         <span>Edad</span>
                         <input type="number" name="edad" id="inputModAge" required min="10">
@@ -202,8 +204,27 @@
                 <p class="error-p"></p>
             </div>
         </div>
-        <!-- <div class="modal-notas"></div> -->
+        <div class="modal-notas modal-hidden">
+            <div class="cont-modal">
+                <h2>Modificar nota</h2>
+                <form id="formModificarNotas" class="diferente">
+                    <label for="mod-note-title-input">
+                        <span>Titulo de la nota</span>
+                        <input type="text" id="mod-note-title-input" required>
+                    </label>
+                    <label for="mod-note-desc-input">
+                        <span>Descripción de la nota</span>
+                        <textarea id="mod-note-desc-input" required></textarea>
+                    </label>
+                    <div>
+                        <button type="button">Cancelar</button>
+                        <button type="submit">Actualizar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </main>
     <script type="module" src="./index.js" defer></script>
 </body>
+
 </html>
