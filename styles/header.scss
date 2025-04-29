@@ -65,7 +65,7 @@ header {
     &>div {
       display: flex;
       height: 100%;
-      gap: 2vh;
+      gap: 2dvh;
 
       &>span {
         color: white;
@@ -104,7 +104,7 @@ header {
           align-items: center;
           min-width: 150px;
           font-size: large;
-          padding: 2vh 4vh;
+          padding: 2dvh 4vh;
 
           &:hover {
             background-color: cornsilk;
