@@ -123,22 +123,23 @@ header .header-right > div > ul > li:hover {
   background-color: cornsilk;
 }
 
-main .cont-regis > section form, main .cont-notes form, main .modal-datos .cont-modal form, main .modal-notas .cont-modal form {
+main .cont-regis > section form, main .cont-notes form, main .modal-datos .cont-modal form, main .modal-notas .cont-modal form, main .modal-image .cont-modal form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
 }
-main .cont-regis > section form label, main .cont-notes form label, main .modal-datos .cont-modal form label, main .modal-notas .cont-modal form label {
+main .cont-regis > section form label, main .cont-notes form label, main .modal-datos .cont-modal form label, main .modal-notas .cont-modal form label, main .modal-image .cont-modal form label {
   display: flex;
   flex-direction: column;
   font-size: 2vh;
 }
-main .cont-regis > section form label input, main .cont-notes form label input, main .modal-datos .cont-modal form label input, main .modal-notas .cont-modal form label input,
+main .cont-regis > section form label input, main .cont-notes form label input, main .modal-datos .cont-modal form label input, main .modal-notas .cont-modal form label input, main .modal-image .cont-modal form label input,
 main .cont-regis > section form label textarea,
 main .cont-notes form label textarea,
 main .modal-datos .cont-modal form label textarea,
-main .modal-notas .cont-modal form label textarea {
+main .modal-notas .cont-modal form label textarea,
+main .modal-image .cont-modal form label textarea {
   margin: 5px 0;
   padding: 1vh;
   border: none;
@@ -147,38 +148,41 @@ main .modal-notas .cont-modal form label textarea {
   outline: none;
   font-size: 2vh;
 }
-main .cont-regis > section form label input:hover, main .cont-notes form label input:hover, main .modal-datos .cont-modal form label input:hover, main .modal-notas .cont-modal form label input:hover,
+main .cont-regis > section form label input:hover, main .cont-notes form label input:hover, main .modal-datos .cont-modal form label input:hover, main .modal-notas .cont-modal form label input:hover, main .modal-image .cont-modal form label input:hover,
 main .cont-regis > section form label textarea:hover,
 main .cont-notes form label textarea:hover,
 main .modal-datos .cont-modal form label textarea:hover,
-main .modal-notas .cont-modal form label textarea:hover {
+main .modal-notas .cont-modal form label textarea:hover,
+main .modal-image .cont-modal form label textarea:hover {
   background-color: hsl(40, 50%, 97%);
 }
-main .cont-regis > section form label input:focus, main .cont-notes form label input:focus, main .modal-datos .cont-modal form label input:focus, main .modal-notas .cont-modal form label input:focus,
+main .cont-regis > section form label input:focus, main .cont-notes form label input:focus, main .modal-datos .cont-modal form label input:focus, main .modal-notas .cont-modal form label input:focus, main .modal-image .cont-modal form label input:focus,
 main .cont-regis > section form label textarea:focus,
 main .cont-notes form label textarea:focus,
 main .modal-datos .cont-modal form label textarea:focus,
-main .modal-notas .cont-modal form label textarea:focus {
+main .modal-notas .cont-modal form label textarea:focus,
+main .modal-image .cont-modal form label textarea:focus {
   outline: 1px solid burlywood;
 }
-main .cont-regis > section form label textarea, main .cont-notes form label textarea, main .modal-datos .cont-modal form label textarea, main .modal-notas .cont-modal form label textarea {
+main .cont-regis > section form label textarea, main .cont-notes form label textarea, main .modal-datos .cont-modal form label textarea, main .modal-notas .cont-modal form label textarea, main .modal-image .cont-modal form label textarea {
   resize: vertical;
   min-height: 10vh;
   max-height: 50vh;
 }
-main .cont-regis > section form button, main .cont-notes form button, main .modal-datos .cont-modal form button, main .modal-notas .cont-modal form button {
+main .cont-regis > section form button, main .cont-notes form button, main .modal-datos .cont-modal form button, main .modal-notas .cont-modal form button, main .modal-image .cont-modal form button, main .cont-regis > section form .btn-label, main .cont-notes form .btn-label, main .modal-datos .cont-modal form .btn-label, main .modal-notas .cont-modal form .btn-label, main .modal-image .cont-modal form .btn-label {
   margin: 10px 0;
   padding: 1vh;
   border: none;
   border-radius: 10px;
   background-color: cornflowerblue;
   color: white;
+  text-align: center;
   font-size: 3vh;
 }
-main .cont-regis > section form button:hover, main .cont-notes form button:hover, main .modal-datos .cont-modal form button:hover, main .modal-notas .cont-modal form button:hover {
+main .cont-regis > section form button:hover, main .cont-notes form button:hover, main .modal-datos .cont-modal form button:hover, main .modal-notas .cont-modal form button:hover, main .modal-image .cont-modal form button:hover, main .cont-regis > section form .btn-label:hover, main .cont-notes form .btn-label:hover, main .modal-datos .cont-modal form .btn-label:hover, main .modal-notas .cont-modal form .btn-label:hover, main .modal-image .cont-modal form .btn-label:hover {
   background-color: dodgerblue;
 }
-main .cont-regis > section form > .user-image, main .cont-notes form > .user-image, main .modal-datos .cont-modal form > .user-image, main .modal-notas .cont-modal form > .user-image {
+main .cont-regis > section form > .user-image, main .cont-notes form > .user-image, main .modal-datos .cont-modal form > .user-image, main .modal-notas .cont-modal form > .user-image, main .modal-image .cont-modal form > .user-image {
   width: 50%;
   aspect-ratio: 1;
   border-radius: 50%;
@@ -186,22 +190,22 @@ main .cont-regis > section form > .user-image, main .cont-notes form > .user-ima
   margin: auto;
   object-fit: cover;
 }
-main .cont-regis > section form.diferente div, main .cont-notes form.diferente div, main .modal-datos .cont-modal form.diferente div, main .modal-notas .cont-modal form.diferente div {
+main .cont-regis > section form.diferente div, main .cont-notes form.diferente div, main .modal-datos .cont-modal form.diferente div, main .modal-notas .cont-modal form.diferente div, main .modal-image .cont-modal form.diferente div {
   display: flex;
   justify-content: space-between;
   gap: 5%;
 }
-main .cont-regis > section form.diferente div button, main .cont-notes form.diferente div button, main .modal-datos .cont-modal form.diferente div button, main .modal-notas .cont-modal form.diferente div button {
+main .cont-regis > section form.diferente div button, main .cont-notes form.diferente div button, main .modal-datos .cont-modal form.diferente div button, main .modal-notas .cont-modal form.diferente div button, main .modal-image .cont-modal form.diferente div button {
   background-color: gray;
   width: 100%;
 }
-main .cont-regis > section form.diferente div button:first-child:hover, main .cont-notes form.diferente div button:first-child:hover, main .modal-datos .cont-modal form.diferente div button:first-child:hover, main .modal-notas .cont-modal form.diferente div button:first-child:hover {
+main .cont-regis > section form.diferente div button:first-child:hover, main .cont-notes form.diferente div button:first-child:hover, main .modal-datos .cont-modal form.diferente div button:first-child:hover, main .modal-notas .cont-modal form.diferente div button:first-child:hover, main .modal-image .cont-modal form.diferente div button:first-child:hover {
   background-color: red;
 }
-main .cont-regis > section form.diferente div button:last-child:hover, main .cont-notes form.diferente div button:last-child:hover, main .modal-datos .cont-modal form.diferente div button:last-child:hover, main .modal-notas .cont-modal form.diferente div button:last-child:hover {
+main .cont-regis > section form.diferente div button:last-child:hover, main .cont-notes form.diferente div button:last-child:hover, main .modal-datos .cont-modal form.diferente div button:last-child:hover, main .modal-notas .cont-modal form.diferente div button:last-child:hover, main .modal-image .cont-modal form.diferente div button:last-child:hover {
   background-color: green;
 }
-main .cont-regis > section form ~ .error-p, main .cont-notes form ~ .error-p, main .modal-datos .cont-modal form ~ .error-p, main .modal-notas .cont-modal form ~ .error-p {
+main .cont-regis > section form ~ .error-p, main .cont-notes form ~ .error-p, main .modal-datos .cont-modal form ~ .error-p, main .modal-notas .cont-modal form ~ .error-p, main .modal-image .cont-modal form ~ .error-p {
   color: red;
   text-align: center;
   font-size: 3vh;
@@ -375,7 +379,7 @@ main .cont-notes .cont-categorias hr {
   border: 0.5px solid black;
   width: 100%;
 }
-main .modal-datos, main .modal-notas {
+main .modal-datos, main .modal-notas, main .modal-image {
   background-color: rgba(0, 0, 0, 0.5);
   width: 100vw;
   height: 100vh;
@@ -389,7 +393,7 @@ main .modal-datos, main .modal-notas {
   visibility: visible;
   transition: background-color 0.3s ease;
 }
-main .modal-datos .cont-modal, main .modal-notas .cont-modal {
+main .modal-datos .cont-modal, main .modal-notas .cont-modal, main .modal-image .cont-modal {
   display: flex;
   flex-direction: column;
   max-width: 50vh;
@@ -401,12 +405,12 @@ main .modal-datos .cont-modal, main .modal-notas .cont-modal {
   transition: transform 0.3s ease;
   transform: scaleY(1);
 }
-main .modal-datos.modal-hidden, main .modal-notas.modal-hidden {
+main .modal-datos.modal-hidden, main .modal-notas.modal-hidden, main .modal-image.modal-hidden {
   background-color: transparent;
   visibility: hidden;
   transition: background-color 0.3s ease, visibility 0s 0.3s;
 }
-main .modal-datos.modal-hidden .cont-modal, main .modal-notas.modal-hidden .cont-modal {
+main .modal-datos.modal-hidden .cont-modal, main .modal-notas.modal-hidden .cont-modal, main .modal-image.modal-hidden .cont-modal {
   transform: scaleY(0);
 }
 

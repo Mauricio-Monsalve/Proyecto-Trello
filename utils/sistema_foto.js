@@ -1,7 +1,21 @@
 import elementos from "./elementos.js";
 import { usuario } from "./sistema_usuarios.js";
+import extractFrom from "extract-uri-image";
 
 export function cambiarFoto() {
+    elementos.changeImagePreview.src = elementos.imgPhoto.src;
+    elementos.modalFoto.classList.remove("modal-hidden");
+}
+
+export function cancelarModificarFoto() {
+    elementos.modalFoto.classList.add("modal-hidden");
+    setTimeout(() => {
+        elementos.changeImagePreview.src = "./images/userDefault.svg";
+        elementos.formModalFoto.reset();
+    }, 300);
+}
+
+export function cambiarFotoUrl() {
     let nuevaFoto = prompt("Ingresa el enlace a la nueva foto");
     
     if(nuevaFoto == null){
@@ -11,9 +25,13 @@ export function cambiarFoto() {
     const fotoPrueba = new Image();
 
     
-    fotoPrueba.onload = () => {
-        elementos.imgPhoto.src = nuevaFoto;
-        usuario.temporal.foto = nuevaFoto;
+    fotoPrueba.onload = async () => {
+        try {
+            const resultado = await extractFrom.url(nuevaFoto);
+            elementos.changeImagePreview.src = resultado;
+        } catch (error) {
+            elementos.changeImagePreview.src = error;
+        }
     };
     
     fotoPrueba.onerror = () => {
@@ -21,14 +39,57 @@ export function cambiarFoto() {
     };
     
     fotoPrueba.src = nuevaFoto;
-
-
-    // if(nuevaFoto.replaceAll(" ","") == "") {
-    //     alert("Url no valido");
-    //     return;
-    // }
-
     
+}
+
+export async function cambiarFotoFile(event) {
+
+    const input = event.target;
+
+    if(input.files[0] == undefined) return;
+
+    try {
+        const resultado = await extractFrom.input(input);
+        elementos.changeImagePreview.src = resultado;
+    } catch (error) {
+        elementos.changeImagePreview.src = error;
+    }
+    
+}
+
+export function aceptarModificarFoto(event) {
+    event.preventDefault();
+
+    const baseUsuariosExiste = localStorage.getItem("Usuarios");
+    let baseUsuarios = [];
+
+    if(!baseUsuariosExiste) {
+        alert("Error al acceder a la base de datos");
+        return;
+    }
+
+    baseUsuarios = baseUsuarios.concat(JSON.parse(baseUsuariosExiste));
+
+    const usuarioExistente = baseUsuarios.find(
+        usuarioBuscar => usuarioBuscar.correo.toLowerCase() == usuario.actual.correo.toLowerCase()
+    );
+
+    if(!usuarioExistente) {
+        alert("Error al cambiar la foto de perfil");
+        return;
+    }
+
+    usuario.temporal.foto = elementos.changeImagePreview.src;
+
+    elementos.imgPhoto.src = usuario.temporal.foto;
+
+    elementos.modalFoto.classList.add("modal-hidden");
+
+    alert("Se ha modificado la foto de perfil correctamente\nPresione 'Guardar' para confirmar cambios");
+
+    setTimeout(() => {
+        elementos.formModalFoto.reset();
+    }, 300);
 }
 
 // export function cancelarCambioFoto() {

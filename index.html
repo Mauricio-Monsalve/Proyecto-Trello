@@ -118,48 +118,6 @@
                 <hr>
             </div>
             <div id="notes" class="notes">
-                <!-- <div class="memo">
-                    <div>
-                        <div class="separator">
-                            <strong>Titulo aaaaaaaaaaa ddddddddddd eeeeeeeeee</strong>
-                            <div class="menu">
-                                <img src="./images/3menu.svg" alt="Modificar borrar">
-                                <ul>
-                                    <li>Modificar</li>
-                                    <li>Borrar</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt et aut explicabo repellendus velit atque aperiam adipisci, vitae rerum corporis ex distinctio perferendis laborum saepe. Assumenda ab reprehenderit error illo.</p>
-                        <select style="color: orange;" onchange="this.style.color = this.querySelector('option:nth-child('+this.value+')').style.color;">
-                            <option style="color: orange;" value="1">Pendiente</option>
-                            <option style="color: green;" value="2">Completo</option>
-                            <option style="color: red;" value="3">Incompleto</option>
-                        </select>
-                    </div>
-                </div> -->
-                <!-- <div class="memo">
-                    <div>
-                        <strong>Titulo</strong>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt et aut explicabo repellendus velit atque aperiam adipisci, vitae rerum corporis ex distinctio perferendis laborum saepe. Assumenda ab reprehenderit error illo.</p>
-                        <select style="color: orange;" onchange="this.style.color = this.querySelector('option:nth-child('+this.value+')').style.color;">
-                            <option style="color: orange;" value="1">Pendiente</option>
-                            <option style="color: green;" value="2">Completo</option>
-                            <option style="color: red;" value="3">Incompleto</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="memo">
-                    <div>
-                        <strong>Titulo</strong>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt et aut explicabo repellendus velit atque aperiam adipisci, vitae rerum corporis ex distinctio perferendis laborum saepe. Assumenda ab reprehenderit error illo.</p>
-                        <select style="color: orange;" onchange="this.style.color = this.querySelector('option:nth-child('+this.value+')').style.color;">
-                            <option style="color: orange;" value="1">Pendiente</option>
-                            <option style="color: green;" value="2">Completo</option>
-                            <option style="color: red;" value="3">Incompleto</option>
-                        </select>
-                    </div>
-                </div> -->
             </div>
         </div>
 
@@ -223,6 +181,39 @@
                 </form>
             </div>
         </div>
+
+
+
+
+
+
+
+        <div class="modal-image modal-hidden">
+            <div class="cont-modal">
+                <h2>Cambiar foto</h2>
+                <form id="formChangeImage" class="diferente">
+                    <button id="btnChangeUrl" type="button">Url</button>
+
+                    <label for="inputChangeFile" class="btn-label">Archivo</label>
+
+                    <input type="file" id="inputChangeFile" accept="image/*" hidden>
+                    <img src="./images/userDefault.svg" alt="Perfil">
+                    <div>
+                        <button type="button">Cancelar</button>
+                        <button type="submit">Actualizar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
     </main>
     <script type="module" src="./index.js" defer></script>
 </body>

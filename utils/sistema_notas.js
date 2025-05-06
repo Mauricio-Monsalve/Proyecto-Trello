@@ -73,11 +73,6 @@ export function traerNotas(quien) {
         return;
     }
     crearHTMLNota(...notasUsuario);
-    // notasUsuario.forEach(
-    //     (nota) => {
-    //         crearHTMLNota(nota);
-    //     }
-    // );
 }
 
 export function limpiarNotas() {
@@ -90,14 +85,6 @@ export function limpiarNotas() {
     for (const notaHTML of notasEnGroupNotes) {
         notaHTML.className = "memo hide-note";
     }
-
-    // notasEnGroupNotes = Array.from(notasEnGroupNotes);
-
-    // notasEnGroupNotes.forEach(
-    //     (notaHTML) => {
-    //         notaHTML.className = "memo hide-note";
-    //     }
-    // );
 }
 
 function crearHTMLNota(...notas) {
@@ -112,20 +99,6 @@ function crearHTMLNota(...notas) {
         if(estado == 3) color_select = "red";
         
         if(!eliminada) {
-
-            // textoHtml += `
-            // <div class="memo show-note" id="nota${id}">
-            //     <div>
-            //         <strong>${titulo}</strong>
-            //         <p>${descripcion}</p>
-            //         <select style="color: ${color_select};" class="opcion${estado}">
-            //             <option style="color: orange;" value="1" ${estado == 1? 'selected' : ''}>Pendiente</option>
-            //             <option style="color: green;" value="2" ${estado == 2? 'selected' : ''}>Completo</option>
-            //             <option style="color: red;" value="3" ${estado == 3? 'selected' : ''}>Incompleto</option>
-            //         </select>
-            //     </div>
-            // </div>
-            // `;
 
             textoHtml += `
             <div class="memo show-note" id="nota${id}">

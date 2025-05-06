@@ -35,13 +35,14 @@
         }
     }
 
-    button {
+    button, .btn-label {
         margin: 10px 0;
         padding: 1vh;
         border: none;
         border-radius: 10px;
         background-color: cornflowerblue;
         color: white;
+        text-align: center;
         font-size: 3vh;
 
         &:hover {

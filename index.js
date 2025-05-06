@@ -1,7 +1,7 @@
 import elementos from "./utils/elementos.js";
 import controlador_vistas from "./utils/controlador.js";
 import { registrarUsuario, ingresarUsuario } from "./utils/sistema_usuarios.js";
-import { cambiarFoto } from "./utils/sistema_foto.js";
+import { aceptarModificarFoto, cambiarFoto, cambiarFotoFile, cambiarFotoUrl, cancelarModificarFoto } from "./utils/sistema_foto.js";
 import * as irA from "./utils/sistema_vistas_simple.js";
 import { cambiarEstadoNota, cambiarNota, cancelarModificarNota, crearNota, filtrarNotas, modificarNota } from "./utils/sistema_notas.js";
 import { guardarDatos, cancelarDatos, cambiarDatos, aceptarModificacion, cancelarModificacion } from "./utils/sistema_modificar.js";
@@ -53,23 +53,10 @@ elementos.formModalNotas.addEventListener("submit",modificarNota);
 
 elementos.cancelarNotaModificar.addEventListener("click",cancelarModificarNota);
 
-// patchEliminarNotas();
+elementos.btnCancelarChangeImage.addEventListener("click",cancelarModificarFoto);
 
-// function patchEliminarNotas() {
+elementos.btnChangeUrlFoto.addEventListener("click",cambiarFotoUrl);
 
-//     //Verificamos si la base de datos existe
-//     let baseNotas = localStorage.getItem("Notas");
-//     if(!baseNotas) return;
-//     baseNotas = JSON.parse( baseNotas );
-//     if(!baseNotas) return;
+elementos.btnChangeFileFoto.addEventListener("change",cambiarFotoFile);
 
-//     //Si no tienen la propiedad "eliminada", la agregamos forzosamente
-//     baseNotas.forEach(nota => {
-//         if(nota.eliminada == undefined) {
-//             nota.eliminada = false;
-//         }
-//     });
-
-//     //Actualizamos la base de datos
-//     localStorage.setItem("Notas", JSON.stringify(baseNotas) );
-// }
+elementos.formModalFoto.addEventListener("submit",aceptarModificarFoto);

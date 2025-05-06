@@ -10,7 +10,6 @@ class Nota extends Plantilla {
         //2 Completo
         //3 Incompleto
         this.estado = 1;
-        // this.eliminada = false;
     }
     cambiarEstado(nuevo_estado){
         switch (nuevo_estado) {
@@ -33,11 +32,5 @@ class Nota extends Plantilla {
         }
     }
 }
-
-// let nota = new Nota();
-// nota.cambiarEstado("eeeee")
-// console.log(nota.estado)
-// nota.cambiarEstado("Completo")
-// console.log(nota.estado)
 
 export default Nota;

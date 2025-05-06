@@ -29,25 +29,6 @@ export function guardarDatos(){
         return;
     }
 
-    //antes de modificar
-    //usuario actual = anterior@gmail.com
-    //usuario temporal = anterior@gmail.com
-    
-    //despues de modificar
-    //usuario actual = anterior@gmail.com
-    //usuario temporal = nuevo@gmail.com
-    
-    //guardo el correo anterior para usarlo despues (el bucle no me afecta) <-correoTemporal
-
-    //despues de guardar
-    //usuario actual = nuevo@gmail.com
-    //usuario temporal = nuevo@gmail.com
-    //las notas en plan, y ahora que  ._., cambia las que tienen "anterior" <- correoTemporal
-    //notas de juan@gmail.com
-    //notas de carlos@gmail.com
-    //notas de pablo@gmail.com
-    //notas de anterior@gmail.com
-
     const correoTemporal = usuario.actual.correo;
 
     for (const clave in usuario.temporal) {
